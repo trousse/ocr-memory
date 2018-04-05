@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import './App.css'
 import Card from "./Card"
 import GuessCount from "./GuessCount"
+import suffle from "lodash.shuffle ";
+
+
+export const SYMBOLS = '😀🎉💖🎩🐶🐱🦄🐬🌍🌛🌞💫🍎🍌🍓🍐🍟🍿'
 
 class App extends Component {
 
@@ -9,16 +13,29 @@ class App extends Component {
     console.log(card+",has been cliked");
   }
 
+  generateCards(){
+    const result = [];
+    const candidates = shuffle(symbol);
+    while(candidates.length != 0){
+      result.push(candidates.pop());
+    }
+    return result;
+  }
+
   render() {
     return (
-      <div className = "memory">
-        <GuessCount guesses = {0}/>
-        <Card card = ":)" feedback = "hidden" onClick = { this.clicked }/>
-        <Card card = ":)" feedback = "hidden" onClick = { this.clicked }/>
-        <Card card = ":(" feedback = "hidden" onClick = { this.clicked }/>
-        <Card card = ":(" feedback = "hidden" onClick = { this.clicked }/>
-        <Card card = ":!" feedback = "hidden" onClick = { this.clicked }/>
-        <Card card = ":!" feedback = "hidden" onClick = { this.clicked }/>
+      <div className="memory">
+        <GuessCount guesses={0} />
+        {this.cards.map((card, index) => (
+          <Card
+            card={card}
+            feedback="visible"
+            key={index}
+            onClick={this.handleCardClick}
+          />
+            )
+          )
+        }
       </div>
     )
   }
