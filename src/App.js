@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import './App.css'
+import Card from "./Card"
+import GuessCount from "./GuessCount"
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">React c’est cool !</p>
+      <div className = "memory">
+        <GuessCount guesses = {0}/>
+        <Card card = ":)" feedback = "hidden"/>
+        <Card card = ":)" feedback = "hidden"/>
+        <Card card = ":(" feedback = "hidden"/>
+        <Card card = ":(" feedback = "hidden"/>
+        <Card card = ":!" feedback = "hidden"/>
+        <Card card = ":!" feedback = "hidden"/>
       </div>
     )
   }
