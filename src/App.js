@@ -13,6 +13,11 @@ class App extends Component {
     console.log(card+",has been cliked");
   }
 
+  // Arrow fx for binding
+  handleCardClick = (card) => {
+  console.log(card, this)
+  }
+
   generateCards(){
     const result = [];
     const candidates = shuffle(SYMBOLS);
