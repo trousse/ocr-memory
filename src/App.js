@@ -23,6 +23,7 @@ class App extends Component {
   }
 
   cards = this.generateCards();
+   
 
   render() {
     return (
@@ -38,6 +39,7 @@ class App extends Component {
             )
           )
         }
+        <HallOfFame entries = {FAKE_HOF}/>
       </div>
     )
   }

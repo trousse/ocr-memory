@@ -1,6 +1,4 @@
-import PropTypes from 'prop-types'
 import React from 'react'
-
 import './HallOfFame.css'
 
 const HallOfFame = ({ entries }) => (

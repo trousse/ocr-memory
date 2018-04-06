@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import "./GuessCount.css"
 
 const GuessCount = ({guesses}) => ( <div className = "guesses">{guesses}</div> )
