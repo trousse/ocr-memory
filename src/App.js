@@ -3,7 +3,7 @@ import './App.css'
 import Card from "./Card"
 import GuessCount from "./GuessCount"
 import shuffle from "lodash.shuffle";
-
+import HallOfFame, { FAKE_HOF } from './HallOfFame';
 
 export const SYMBOLS = '😀🎉💖🎩🐶🐱🦄🐬🌍🌛🌞💫🍎🍌🍓🍐🍟🍿'
 
