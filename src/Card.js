@@ -4,8 +4,8 @@ import "./Card.css"
 
 const HIDDEN_SYMBOL = '?'
 
-   const card = ({card,feelback,onClick}) => (
-         <div className = "card ${feelback}" onClick = {()=>onClick(card)}>
+   const card = ({card,feelback,index,onClick}) => (
+         <div className = "card ${feelback}" onClick = {() => onClick(index)}>
             <span  className = "symbol">
                 {feelback === "hidden" ? HIDDEN_SYMBOL : card}
             </span>
@@ -20,6 +20,7 @@ const HIDDEN_SYMBOL = '?'
           'justMismatched',
           'visible',
         ]).isRequired,
+        index: PropTypes.number.isRequired,
         onClick: PropTypes.func.isRequired,
       }
 export default card
