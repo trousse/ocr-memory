@@ -21,7 +21,6 @@ class App extends Component {
   }
 
   // Arrow fx for binding
-  handleCardClick = (card) => {
     handleCardClick = index => {
       const { currentPair } = this.state
     
