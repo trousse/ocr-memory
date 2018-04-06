@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import Card from "./Card"
 import GuessCount from "./GuessCount"
-import suffle from "lodash.shuffle ";
+import shuffle from "lodash.shuffle";
 
 
 export const SYMBOLS = '😀🎉💖🎩🐶🐱🦄🐬🌍🌛🌞💫🍎🍌🍓🍐🍟🍿'
@@ -15,12 +15,14 @@ class App extends Component {
 
   generateCards(){
     const result = [];
-    const candidates = shuffle(symbol);
-    while(candidates.length != 0){
+    const candidates = shuffle(SYMBOLS);
+    while(candidates.length !== 0){
       result.push(candidates.pop());
     }
     return result;
   }
+
+  cards = this.generateCards();
 
   render() {
     return (
@@ -31,7 +33,7 @@ class App extends Component {
             card={card}
             feedback="visible"
             key={index}
-            onClick={this.handleCardClick}
+            onClick={this.clicked}
           />
             )
           )
